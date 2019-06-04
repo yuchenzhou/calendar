@@ -42,7 +42,25 @@ teammates | Array | 返回成员列表                |   []      |
 
 具体comments数组元素示例:{id, name}
 
-### 场景3：页面加载中日程列表拉取
+### 场景3：发送通知
+###### 请求url:/api/team/remind
+###### 请求方式：http post
+###### 数据承载方式：json
+###### 请求参数：
+
+ 参数名 | 必选 | 类型 | 说明 | 示例 
+------|------|------|------|------   
+target       | 是 | String | 登陆状态和用户标识 | / |
+scheduleId   | 是 | String | 用户团队ID        | / |
+
+######  返回参数:
+
+ 参数名 | 类型 | 说明 | 示例 
+------|------|------|------
+status | number | 请求返回状态码                 | 200，404 |
+msg   | String | 返回请求结果信息               | "请求成功" |
+
+### 场景4：页面加载中日程列表拉取
 ###### 请求url:/api/calendar/schedule/list
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -63,7 +81,7 @@ calendars | Array | 返回日程列表        | [] |
 
 具体scheduler数组元素示例:{calendarId, creatorId, dataCreated, endTime, isWholeDay,  location, members, scheduleId, scheduleName, startTime, _v, _Id}
 
-### 场景4：页面加载中日历列表拉取
+### 场景5：页面加载中日历列表拉取
 ###### 请求url:/api/calendar/list
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -83,7 +101,7 @@ calendars | Array | 返回日程列表        | [] |
 
 具体calendar数组元素示例:{calendarId, color, creatorId, dataCreated, name, teamId,  _v, _Id}
 
-### 场景5：添加日历
+### 场景6：添加日历
 ###### 请求url:/api/calendar/add
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -102,7 +120,7 @@ status | number | 请求返回状态码      | 200，404 |
 msg    | String | 返回请求结果信息 | "请求成功" |
 calendarId     | String | 返回新建日历唯一识别ID | / |
 
-### 场景6：编辑日历
+### 场景7：编辑日历
 ###### 请求url:/api/calendar/edit
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -121,7 +139,7 @@ calendarId       | 是 | String | 日历唯一识别ID | / |
 status | number | 请求返回状态码      | 200，404 |
 msg   | String | 返回请求结果信息 | "请求成功" |
 
-### 场景7：删除日历
+### 场景8：删除日历
 ###### 请求url:/api/calendar/delete
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -138,7 +156,7 @@ calendarId       | 是 | String | 日历唯一识别ID | / |
 status | number | 请求返回状态码      | 200，404 |
 msg   | String | 返回请求结果信息 | "请求成功" |
 
-### 场景8：日历详情
+### 场景9：日历详情
 ###### 请求url:/api/calendar/info
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -158,7 +176,7 @@ calendar | JSON | 返回对应日历信息               |   {}     |
 
 具体calendar示例:{calendarId, color, creatorId, dataCreated, name, teamId, _v, _Id}
 
-### 场景9：创建日程
+### 场景10：创建日程
 ###### 请求url:/api/calendar/schedule/add
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -181,7 +199,7 @@ status | number | 请求返回状态码      | 200，404 |
 msg   | String | 返回请求结果信息 | "请求成功" |
 scheduleId   | String | 日程ID          | / |
 
-### 场景10：编辑日程
+### 场景11：编辑日程
 ###### 请求url:/api/calendar/schedule/edit
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -205,7 +223,7 @@ members          | 可选 | String | 更改后包含的成员        | "张三" 
 status | number | 请求返回状态码                    | 200，404 |
 msg   | String | 返回请求结果信息               | "请求成功" |
 
-### 场景11：删除日程
+### 场景12：删除日程
 ###### 请求url:/api/calendar/schedule/delete
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -222,7 +240,7 @@ scheduleId       | 是 | String | 日程ID                | / |
 status | number | 请求返回状态码                    | 200，404 |
 msg   | String | 返回请求结果信息               | "请求成功" |
 
-### 场景12：查看日程详情
+### 场景13：查看日程详情
 ###### 请求url:/api/calendar/schedule/info
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -242,7 +260,7 @@ schedule | Array | 返回对应日程信息              | []       |
 
 具体scheduler数组元素示例:{calendarId, creatorId, dataCreated, endTime, isWholeDay,  location, members, scheduleId, scheduleName, startTime, _v, _Id}
 
-### 场景13：日程评论-拉取评论
+### 场景14：日程评论-拉取评论
 ###### 请求url:/api/calendar/schedule/comment/list
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -262,7 +280,7 @@ comments  | Array | 用户评论信息                 | []       |
 
 具体comments数组元素示例:{commentId, content, creatorId, dateCreated, replyCommentId(回复时才有),  scheduleId, _v, _Id}
 
-### 场景14：日程评论-评论新建
+### 场景15：日程评论-评论新建
 ###### 请求url:/api/calendar/schedule/comment/add
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -281,7 +299,7 @@ status | number | 请求返回状态码                 | 200，404 |
 msg   | String | 返回请求结果信息               | "请求成功" |
 commentId | String | 返回评论ID                |    /      |
 
-### 场景15：日程评论-评论回复
+### 场景16：日程评论-评论回复
 ###### 请求url:/api/calendar/schedule/comment/reply
 ###### 请求方式：http post
 ###### 数据承载方式：json
@@ -300,7 +318,7 @@ status | number | 请求返回状态码                 | 200，404 |
 msg   | String | 返回请求结果信息               | "请求成功" |
 commentId | String | 返回评论ID                |    /      |
 
-### 场景16：日程评论-评论删除
+### 场景17：日程评论-评论删除
 ###### 请求url:/api/calendar/schedule/comment/delete
 ###### 请求方式：http post
 ###### 数据承载方式：json
